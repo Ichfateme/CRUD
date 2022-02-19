@@ -1,18 +1,65 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Navbar />
+
+    <div class="posts">
+      <post-cart :id="post.id" :title="post.title" v-for="post in posts" :key="post.id" />
+    </div>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+  // Packages
+  import axios from "axios"
 
-export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
-};
+  // Components
+  import Navbar from "@/components/Navbar.vue";
+  import PostCart from "@/components/PostCart.vue";
+
+  export default {
+    name: "Home",
+
+    components: {
+      Navbar,
+      PostCart
+    },
+
+    data() {
+      return {
+        posts: []
+      }
+    },
+
+    created() {
+      this.loadPosts()
+    },
+
+    methods: {
+      loadPosts() {
+        axios
+          .get('https://jsonplaceholder.typicode.com/posts', {
+            params: {
+              _limit: 6
+            }
+          })
+          .then((r) => {
+            this.posts = r.data
+            console.log(r.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      }
+    }
+  };
 </script>
+
+<style>
+  .posts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+</style>
