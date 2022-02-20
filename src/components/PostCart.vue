@@ -43,12 +43,17 @@
 <style>
   .postCart {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 20px;
 
   }
 
   .textCart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
     background: #EEEEEE;
     padding: 24px;
     border-radius: 15px;

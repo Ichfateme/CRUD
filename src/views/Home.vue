@@ -1,11 +1,10 @@
 <template>
   <div class="home">
-    <Navbar />
+    <Navbar msg="All Posts" />
 
     <div class="posts">
       <post-cart :id="post.id" :title="post.title" v-for="post in posts" :key="post.id" />
     </div>
-
   </div>
 </template>
 
@@ -56,6 +55,13 @@
 </script>
 
 <style>
+  .home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .posts {
     display: flex;
     justify-content: center;

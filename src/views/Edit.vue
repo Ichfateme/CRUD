@@ -1,5 +1,5 @@
 <template>
-  <Navbar />
+  <Navbar msg="Edit Post ID: #2"/>
   <div class="edit">
 
     <!-- textarea -->
@@ -72,9 +72,17 @@
 
 
 <style scoped>
+  .edit {
+    padding: 50px;
+  }
+
   .textarea {
     width: 50%;
     height: 50px;
+    border-color: gray;
+    border-radius: 5px;
+    padding: 5px;
+    scroll-behavior: unset;
   }
 
   .title {

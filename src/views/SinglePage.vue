@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbar msg="Post ID: #2"/>
 
     <div class="post">
       <!-- Edit and Delete -->
@@ -16,9 +16,9 @@
           </router-link>
         </div>
         <div>
-          <router-link to="" class="btn">
+          <button @click="remove()" to="" class="btn">
             delete
-          </router-link>
+          </button>
         </div>
       </div>
 
@@ -69,6 +69,17 @@
           })
           .catch((err) => {
             console.log(err);
+          })
+      },
+
+      remove() {
+        const id = this.$route.params.id
+        axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+          .then((succes) => {
+            this.$router.push({
+              path: '/'
+            })
+            console.log(succes);
           })
       }
     }
