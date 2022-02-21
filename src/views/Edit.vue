@@ -1,31 +1,27 @@
 <template>
-  <Navbar msg="Edit Post ID: #2"/>
-  <div class="edit">
-
-    <!-- textarea -->
-    <div>
-      <h1 class="title">
-        Title:
-      </h1>
-      <textarea v-model="post.title" class="textarea">
+  <div>
+    <Navbar msg="Edit Post ID: #2" />
+    <div class="edit">
+      <div>
+        <h1 class="title">
+          Title:
+        </h1>
+        <textarea v-model="post.title" class="textarea">
       </textarea>
-    </div>
-
-    <div>
-      <h1 class="title">
-        Title:
-      </h1>
-      <textarea v-model="post.body" class="textarea">
+      </div>
+      <div>
+        <h1 class="title">
+          Title:
+        </h1>
+        <textarea v-model="post.body" class="textarea">
       </textarea>
+      </div>
+      <div class="button">
+        <button @click="edit" class="btn">
+          Save change
+        </button>
+      </div>
     </div>
-
-    <!-- button -->
-    <div class="button">
-      <router-link to="" class="btn">
-        Save change
-      </router-link>
-    </div>
-
   </div>
 </template>
 <script>
@@ -59,6 +55,23 @@
           .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
           .then((r) => {
             this.post = r.data
+            console.log(r.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      },
+
+      edit() {
+        const id = this.$route.params.id
+        axios
+          .put(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+            data: {
+              ...this.post
+            }
+          })
+          .then((r) => {
+            alert('changeing :)')
             console.log(r.data);
           })
           .catch((err) => {
