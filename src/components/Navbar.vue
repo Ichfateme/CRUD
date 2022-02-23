@@ -1,10 +1,18 @@
 <template>
-  <div class="nav">
-    <!-- Post link -->
-    <button to="" class="btn">
-      ←
-    </button>
-    <h1>{{msg}}</h1>
+  <div class="navbar">
+    <div class="nav">
+      <!-- Post link -->
+      <div class="link">
+        <button to="" class="btn">
+          ←
+        </button>
+        <h1>{{msg}}</h1>
+      </div>
+
+      <div class="icon">
+        <img class="img" src="@/assets/jirafe.jpg" alt="">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,16 +25,36 @@
   };
 </script>
 <style>
-  .nav {
-    padding: 0 70px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .navbar {
     width: 100%;
-    height: 80px;
     background: #FAFAFA;
     margin-bottom: 40px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
   }
 
   .btn {
