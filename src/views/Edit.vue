@@ -1,23 +1,24 @@
 <template>
   <div>
     <Navbar msg="Edit Post ID: #2" />
-    <div class="edit">
+    <div class="p-3">
       <div>
-        <h1 class="title">
+        <h1 class="text-lg font-bold">
           Title:
         </h1>
-        <textarea v-model="post.title" class="textarea">
+        <textarea v-model="post.title" class="w-1/2 h-14 p-2 border-solid border-2 border-sky-500">
       </textarea>
       </div>
       <div>
-        <h1 class="title">
+        <h1 class="text-lg font-bold">
           Title:
         </h1>
-        <textarea v-model="post.body" class="textarea">
+        <textarea v-model="post.body" class="w-1/2 h-14 p-2 border-solid border-2 border-sky-500">
       </textarea>
       </div>
-      <div class="button">
-        <button @click="edit" class="btn">
+      <div class="mt-2">
+        <button @click="edit"
+          class="flex items-center justify-center px-2 py-1 no-underline bg-black rounded-md text-white">
           Save change
         </button>
       </div>
@@ -82,27 +83,3 @@
 
   }
 </script>
-
-
-<style scoped>
-  .edit {
-    padding: 50px;
-  }
-
-  .textarea {
-    width: 50%;
-    height: 50px;
-    border-color: gray;
-    border-radius: 5px;
-    padding: 5px;
-    scroll-behavior: unset;
-  }
-
-  .title {
-    font-size: 24px;
-  }
-
-  .button {
-    margin-top: 15px;
-  }
-</style>

@@ -7,15 +7,12 @@
       </p>
 
       <!-- Post link -->
-      <router-link
-        :to="{
+      <router-link :to="{
           name: 'SinglePage',
           params: {
             id: id
           }
-        }"
-        class="flex items-center justify-center px-2 py-1 no-underline bg-black rounded-md text-white"
-      >
+        }" class="flex items-center justify-center px-2 py-1 no-underline bg-black rounded-md text-white">
         →
       </router-link>
     </div>

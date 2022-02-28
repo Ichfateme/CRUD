@@ -1,29 +1,30 @@
 <template>
   <div>
-    <Navbar msg="Post ID: #2"/>
+    <Navbar msg="Post ID: #2" />
 
-    <div class="post">
+    <div class="flex justify-center flex-col px-16">
       <!-- Edit and Delete -->
-      <div class="button">
+      <div class="flex gap-5">
         <div>
           <router-link :to="{
           name: 'Edit',
           params: {
             id: $route.params.id
           }
-        }" class="btn">
+        }" class="flex items-center justify-center px-2 py-1 no-underline bg-black rounded-md text-white">
             edit
           </router-link>
         </div>
         <div>
-          <button @click="remove()" to="" class="btn">
+          <button @click="remove()" to=""
+            class="flex items-center justify-center px-2 py-1 no-underline bg-black rounded-md text-white">
             delete
           </button>
         </div>
       </div>
 
       <!-- Title -->
-      <h1 class="title">
+      <h1 class="text-lg mt-2">
         {{post.title}}
       </h1>
 
@@ -88,20 +89,7 @@
 
 
 <style>
-  .post {
-    display: flex;
-    padding: 0 70px;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   .title {
     font-size: 24px;
-  }
-
-  .button {
-    display: flex;
-    font-size: 12px;
-    gap: 20px;
   }
 </style>

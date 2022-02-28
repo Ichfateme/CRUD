@@ -1,6 +1,6 @@
 <template>
   <div class="w-full bg-zinc-100 mb-10">
-    <div class="flex justify-center items-center justify-between py-5 px-3 ">
+    <div class="flex justify-center items-center justify-between p-5">
       <!-- Post link -->
       <div class="flex justify-center items-center gap-5">
         <button to="" class="flex items-center justify-center px-2 py-1 no-underline bg-black rounded-md text-white">

@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
+  <div class="flex flex-col justify-center items-start">
     <Navbar msg="All Posts" />
 
-    <div class="posts">
+    <div class="flex flex-wrap justify-center gap-6">
       <post-cart :id="post.id" :title="post.title" v-for="post in posts" :key="post.id" />
     </div>
   </div>
@@ -53,19 +53,3 @@
     }
   };
 </script>
-
-<style>
-  .home {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .posts {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-</style>
