@@ -1,8 +1,8 @@
 <template>
-  <div class="postCart">
-    <div class="textCart">
+  <div class="flex justify-end">
+    <div class="flex flex-col justify-between items-start p-5 w-80 bg-zinc-100 rounded-md">
       <!-- Post title -->
-      <p class="text">
+      <p class="text-lg mb-2">
         {{ title }}
       </p>
 
@@ -14,7 +14,7 @@
             id: id
           }
         }"
-        class="btn"
+        class="flex items-center justify-center px-2 py-1 no-underline bg-black rounded-md text-white"
       >
         →
       </router-link>
@@ -39,41 +39,3 @@
 
   };
 </script>
-
-<style>
-  .postCart {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-
-  }
-
-  .textCart {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    background: #EEEEEE;
-    padding: 24px;
-    border-radius: 15px;
-    width: 350px;
-  }
-
-  .text {
-    font-size: 24px;
-  }
-
-  .btn {
-    font-size: 20px;
-    background: #000;
-    color: #fff;
-    border: 0;
-    border-radius: 10px;
-    text-decoration: none;
-    display: inline-flex;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
